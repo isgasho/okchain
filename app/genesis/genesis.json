@@ -57,6 +57,7 @@
         "denom": "okt"
       }
     },
+    "debug": null,
     "dex": {
       "params": {
         "delist_max_deposit_period": "86400000000000",
