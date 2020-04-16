@@ -14,7 +14,7 @@ commands:
           name: "Restore source code cache"
           keys:
             - go-src-v1-{{ .Revision }}
-      - checkout:
+      - checkout
 #       - restore_cache:
 #           name: "Restore go modules cache"
 #           keys:
