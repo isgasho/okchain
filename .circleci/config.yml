@@ -15,7 +15,7 @@ commands:
           keys:
             - go-src-v1-{{ .Revision }}
       - checkout
-     - restore_cache:
+      - restore_cache:
          name: "Restore go modules cache"
          keys:
            - go-mod-v1-{{ checksum "go.sum" }}
