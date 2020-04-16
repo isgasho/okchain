@@ -75,13 +75,9 @@ update_vendor_deps:
 
 go-mod-cache: go.sum
 	@echo "--> Download go modules to local cache"
-	@export GO111MODULE=on
 	@go clean --modcache
 	@rm -f go.sum
 	@go mod download
-	@go mod tidy
-	@go mod verify
-	@go mod vendor
 
 cli:
 	go install -v $(BUILD_FLAGS) -tags "$(BUILD_TAGS)" ./cmd/okchaincli
