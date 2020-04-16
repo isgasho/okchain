@@ -14,11 +14,11 @@ commands:
           name: "Restore source code cache"
           keys:
             - go-src-v1-{{ .Revision }}
-      - checkout
-      - restore_cache:
-          name: "Restore go modules cache"
-          keys:
-            - go-mod-v1-{{ checksum "go.sum" }}
+      - checkout:
+#       - restore_cache:
+#           name: "Restore go modules cache"
+#           keys:
+#             - go-mod-v1-{{ checksum "go.sum" }}
       - run:
           name: << parameters.description >>
           command: |
@@ -32,10 +32,10 @@ jobs:
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     steps:
       - checkout
-      - restore_cache:
-          name: Restore go modules cache
-          keys:
-            - go-mod-v1-{{ checksum "go.sum" }}
+#       - restore_cache:
+#           name: Restore go modules cache
+#           keys:
+#             - go-mod-v1-{{ checksum "go.sum" }}
       - run:
           name: Cache go modules
           command: go clean --modcache && go mod download
