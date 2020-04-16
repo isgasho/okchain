@@ -44,7 +44,7 @@ jobs:
           command: make go-mod-cache
       - run:
           name: Build
-          command: make build
+          command: export GO111MODULE=on && make build
 #      - run:
 #          name: Unit Test
 #          command: make test-unit
