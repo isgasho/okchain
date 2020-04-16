@@ -36,9 +36,9 @@ jobs:
           name: Restore go modules cache
           keys:
             - go-mod-v1-{{ checksum "go.sum" }}
-      - run: go get github.com/cosmos/cosmos-sdk
-      - run: go get github.com/tendermint/tendermint
-      - run: go get github.com/tendermint/iavl
+#      - run: go get github.com/cosmos/cosmos-sdk
+#      - run: go get github.com/tendermint/tendermint
+#      - run: go get github.com/tendermint/iavl
       - run:
           name: Cache go modules
           command: rm go.sum && make go-mod-cache
