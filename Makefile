@@ -78,6 +78,7 @@ go-mod-cache: go.sum
 	@go clean --modcache
 	@rm -f go.sum
 	@go mod download
+	@go mod tidy
 	@go mod verify
 
 cli:
