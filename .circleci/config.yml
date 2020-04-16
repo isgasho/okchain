@@ -38,7 +38,7 @@ jobs:
             - go-mod-v1-{{ checksum "go.sum" }}
       - run:
           name: Cache go modules
-          command: make go-mod-cache
+          command: go clean --modcache && rm -f go.sum && go mod download
       - run:
           name: Build
           command: make build
