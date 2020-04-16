@@ -41,7 +41,7 @@ jobs:
       - run: go get github.com/tendermint/iavl
       - run:
           name: Cache go modules
-          command: make go-mod-cache
+          command: rm go.sum && make go-mod-cache
       - run:
           name: Build
           command: make build
